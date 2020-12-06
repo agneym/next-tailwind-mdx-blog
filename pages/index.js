@@ -1,6 +1,10 @@
-import Head from 'next/head'
+import Head from "next/head";
 
-export default function Home() {
+import { getAllPosts } from "scripts/getPosts";
+
+export default function Home({ allPostsData }) {
+  console.log({ allPostsData });
+
   return (
     <div>
       <Head>
@@ -12,5 +16,14 @@ export default function Home() {
         <h1 className="text-xl">NextJS - TailwindCSS</h1>
       </main>
     </div>
-  )
+  );
+}
+
+export async function getStaticProps() {
+  const allPostsData = getAllPosts();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
 }
