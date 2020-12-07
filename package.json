@@ -9,14 +9,23 @@
   },
   "dependencies": {
     "@mdx-js/loader": "^1.6.22",
+    "@mdx-js/mdx": "^1.6.22",
     "@next/mdx": "^10.0.3",
     "autoprefixer": "^10.0.4",
     "gray-matter": "^4.0.2",
+    "lodash": "^4.17.20",
     "next": "10.0.3",
     "postcss": "^8.1.14",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "tailwindcss": "^2.0.1"
+    "remark": "^12.0.1",
+    "remark-mdx": "^1.6.22",
+    "remark-mdx-remove-exports": "^1.6.22",
+    "remark-mdx-remove-imports": "^1.6.22",
+    "remark-retext": "^4.0.0",
+    "tailwindcss": "^2.0.1",
+    "unified": "^9.2.0",
+    "unist-util-visit": "^2.0.3"
   },
   "devDependencies": {
     "husky": "^4.3.4",
