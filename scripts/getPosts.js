@@ -66,21 +66,23 @@ export async function getAllPosts() {
 
       const fileContents = fs.readFileSync(fullPath, "utf8");
       const { data, content } = matter(fileContents);
-      let excerpt = "";
+      let excerpt = data.excerpt;
 
-      const contents = await remark()
+      await remark()
         .use(remarkMdx)
         .use(removeExports)
         .use(removeImports)
         .use(() => (tree) => {
-          excerpt = getExcerptPlain(tree);
+          if (!excerpt) {
+            excerpt = getExcerptPlain(tree);
+          }
         })
         .process(content);
 
       return {
         slug,
-        excerpt,
         ...data,
+        excerpt,
         date: data.date.toISOString(),
       };
     })
