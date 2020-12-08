@@ -1,5 +1,6 @@
 import Head from "next/head";
 
+import Header from "components/Header";
 import { getAllPosts } from "scripts/getPosts";
 
 export default function Home({ allPostsData }) {
@@ -11,10 +12,12 @@ export default function Home({ allPostsData }) {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main>
-        <h1 className="text-xl">NextJS - TailwindCSS</h1>
-      </main>
+      <div className="max-w-xl m-auto">
+        <Header />
+        <main>
+          <h1 className="text-xl">NextJS - TailwindCSS</h1>
+        </main>
+      </div>
     </div>
   );
 }
