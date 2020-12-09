@@ -1,6 +1,7 @@
 import Head from "next/head";
 
 import SiteHeader from "components/SiteHeader";
+import MainHeader from "components/MainHeader";
 import { getAllPosts } from "scripts/getPosts";
 
 export default function Home({ allPostsData }) {
@@ -15,7 +16,7 @@ export default function Home({ allPostsData }) {
       <div className="max-w-2xl m-auto">
         <SiteHeader />
         <main>
-          <h1 className="text-xl">NextJS - TailwindCSS</h1>
+          <MainHeader />
         </main>
       </div>
     </div>
