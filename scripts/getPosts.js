@@ -21,6 +21,12 @@ const SpaceMarkdownNodeTypesSet = new Set([
   `break`,
 ]);
 
+/**
+ * Get the excerpt from the MDX
+ * @param {object} markdownAst Syntax Tree
+ * @param {number} pruneLength The length of text to extract
+ * @param {string} excerptSeparator Extract the seperator
+ */
 function getExcerptPlain(markdownAst, pruneLength = 160, excerptSeparator) {
   const excerptNodes = [];
   let isBeforeSeparator = true;
@@ -56,6 +62,9 @@ function getExcerptPlain(markdownAst, pruneLength = 160, excerptSeparator) {
 
 const postDirectory = path.join(process.cwd(), "pages/blog");
 
+/**
+ * Get all posts in the {postDirectory}
+ */
 export async function getAllPosts() {
   const fileNames = fs.readdirSync(postDirectory);
 
@@ -94,4 +103,10 @@ export async function getAllPosts() {
       return -1;
     }
   });
+}
+
+export function getPost(slug) {
+  const fullPath = path.join(postDirectory, `${filename}.mdx`);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const { data, content } = matter(fileContents);
 }

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import BlogListItem from "./BlogListItem";
 
 function BlogList({ allPostsData }) {
@@ -5,7 +7,11 @@ function BlogList({ allPostsData }) {
     <ul className="divide-y divide-gray-200">
       {allPostsData.map((post) => (
         <li className="py-12" key={post.slug}>
-          <BlogListItem postData={post} />
+          <Link href={`/blog/${post.slug}`}>
+            <a>
+              <BlogListItem postData={post} />
+            </a>
+          </Link>
         </li>
       ))}
     </ul>
