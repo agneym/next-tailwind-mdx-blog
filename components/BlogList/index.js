@@ -6,8 +6,8 @@ function BlogList({ allPostsData }) {
   return (
     <ul className="divide-y divide-gray-200">
       {allPostsData.map((post) => (
-        <li className="py-12" key={post.slug}>
-          <Link href={`/blog/${post.slug}`}>
+        <li className="py-12" key={post.__resourcePath}>
+          <Link href={`/blog/${post.__resourcePath.replace(/\.mdx$/, "")}`}>
             <a>
               <BlogListItem postData={post} />
             </a>

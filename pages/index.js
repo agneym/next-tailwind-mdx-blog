@@ -3,9 +3,10 @@ import Head from "next/head";
 import SiteHeader from "components/SiteHeader";
 import MainHeader from "components/MainHeader";
 import BlogList from "components/BlogList";
-import { getAllPosts } from "scripts/getPosts";
 
-export default function Home({ allPostsData }) {
+import { frontMatter } from "./blog/*.mdx";
+
+export default function Home() {
   return (
     <div>
       <Head>
@@ -16,18 +17,9 @@ export default function Home({ allPostsData }) {
         <SiteHeader />
         <main>
           <MainHeader />
-          <BlogList allPostsData={allPostsData} />
+          <BlogList allPostsData={frontMatter} />
         </main>
       </div>
     </div>
   );
-}
-
-export async function getStaticProps() {
-  const allPostsData = await getAllPosts();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
 }
