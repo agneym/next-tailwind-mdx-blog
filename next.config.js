@@ -1,10 +1,9 @@
-const withMDX = require("@next/mdx")({
-  options: {
-    remarkPlugins: [],
-    rehypePlugins: [],
-  },
-});
+const withMdxEnhanced = require("next-mdx-enhanced");
 
-module.exports = withMDX({
-  pageExtensions: ["js", "jsx", "mdx"],
-});
+module.exports = withMdxEnhanced({
+  layoutPath: "templates",
+  remarkPlugins: [],
+  rehypePlugins: [],
+  usesSrc: false,
+  defaultLayout: true,
+})();
