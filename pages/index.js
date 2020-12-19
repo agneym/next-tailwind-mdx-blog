@@ -5,14 +5,16 @@ import MainHeader from "components/MainHeader";
 import BlogList from "components/BlogList";
 import Footer from "components/Footer";
 
+import blogConfig from "blog.config";
 import { frontMatter } from "./blog/*.mdx";
 
 export default function Home() {
   return (
     <div>
       <Head>
-        <title>Mindless Blog</title>
+        <title>{blogConfig.title}</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content={blogConfig.description} />
       </Head>
       <div className="max-w-4xl m-auto">
         <SiteHeader />
