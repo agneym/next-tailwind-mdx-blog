@@ -2,7 +2,8 @@ import dayjs from "dayjs";
 import Head from "next/head";
 
 import SiteHeader from "components/SiteHeader";
-import SiteFooter from "components/Footer";
+import ArticleFooter from "components/ArticleFooter";
+import SiteFooter from "components/SiteFooter";
 
 import blogConfig from "blog.config";
 
@@ -38,18 +39,7 @@ function BlogPost({ frontMatter, children }) {
             </header>
             <div className="prose max-w-none pt-10 pb-8">{children}</div>
           </article>
-          <div className="flex justify-between mt-4 mb-6">
-            <div></div>
-            <div className="w-44">
-              <a
-                href="https://www.buymeacoffee.com/agney"
-                target="_blank"
-                className="bg-green-500	px-4 py-2 block"
-              >
-                <img src="/bmc.svg" alt="Buy me a Coffee" />
-              </a>
-            </div>
-          </div>
+          <ArticleFooter postData={frontMatter} />
         </div>
         <SiteFooter />
       </main>
