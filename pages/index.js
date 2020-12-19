@@ -5,7 +5,6 @@ import MainHeader from "components/MainHeader";
 import BlogList from "components/BlogList";
 import SiteFooter from "components/SiteFooter";
 
-import blogConfig from "blog.config";
 import { frontMatter } from "./blog/*.mdx";
 
 export default function Home() {
