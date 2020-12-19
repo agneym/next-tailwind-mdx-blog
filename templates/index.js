@@ -1,8 +1,14 @@
+import { MDXProvider } from "@mdx-js/react";
 import dayjs from "dayjs";
 
 import SiteHeader from "components/SiteHeader";
 import ArticleFooter from "components/ArticleFooter";
 import SiteFooter from "components/SiteFooter";
+import CustomLink from "components/CustomLink";
+
+const components = {
+  a: CustomLink,
+};
 
 function BlogPost({ frontMatter, children }) {
   const { title, date, excerpt } = frontMatter;
@@ -26,7 +32,9 @@ function BlogPost({ frontMatter, children }) {
               </h1>
             </div>
           </header>
-          <div className="prose max-w-none pt-10 pb-8">{children}</div>
+          <div className="prose max-w-none pt-10 pb-8">
+            <MDXProvider components={components}>{children}</MDXProvider>
+          </div>
         </article>
         <ArticleFooter postData={frontMatter} />
       </div>
