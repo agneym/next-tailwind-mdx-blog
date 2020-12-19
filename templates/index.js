@@ -38,6 +38,18 @@ function BlogPost({ frontMatter, children }) {
             </header>
             <div className="prose max-w-none pt-10 pb-8">{children}</div>
           </article>
+          <div className="flex justify-between mt-4 mb-6">
+            <div></div>
+            <div className="w-44">
+              <a
+                href="https://www.buymeacoffee.com/agney"
+                target="_blank"
+                className="bg-green-500	px-4 py-2 block"
+              >
+                <img src="/bmc.svg" alt="Buy me a Coffee" />
+              </a>
+            </div>
+          </div>
         </div>
         <SiteFooter />
       </main>
