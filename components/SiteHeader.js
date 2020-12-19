@@ -9,14 +9,14 @@ function Header({ meta }) {
     <>
       <Head>
         <title>
-          {meta.title
+          {meta?.title
             ? `${meta.title} - ${blogConfig.title}`
             : blogConfig.title}
         </title>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content={meta.description ?? blogConfig.description}
+          content={meta?.description ?? blogConfig.description}
         />
         <meta name="twitter:site" content={`${blogConfig.twitterUsername}`} />
         <link

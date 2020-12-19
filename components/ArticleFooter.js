@@ -16,7 +16,7 @@ function ArticleFooter({ postData }) {
         <a
           href={getTwitterLink()}
           target="_blank"
-          className="block bg-indigo-300 flex items-center justify-center hover:shadow-md h-12"
+          className="block bg-blue-400 flex items-center justify-center hover:shadow-md h-12"
         >
           <img src="/social/share-twitter.svg" alt="Share on Twitter" />
         </a>
