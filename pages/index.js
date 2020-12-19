@@ -3,6 +3,7 @@ import Head from "next/head";
 import SiteHeader from "components/SiteHeader";
 import MainHeader from "components/MainHeader";
 import BlogList from "components/BlogList";
+import Footer from "components/Footer";
 
 import { frontMatter } from "./blog/*.mdx";
 
@@ -19,6 +20,7 @@ export default function Home() {
           <MainHeader />
           <BlogList allPostsData={frontMatter} />
         </main>
+        <Footer />
       </div>
     </div>
   );
