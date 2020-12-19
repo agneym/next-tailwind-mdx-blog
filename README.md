@@ -1,6 +1,6 @@
 # NextJS MDX Tailwind Blog
 
-![Twitter Follow](https://img.shields.io/twitter/follow/agneymenon?style=flat-square)
+[![Twitter Follow](https://img.shields.io/twitter/follow/agneymenon?style=?style=flat-square&color=informational)](https://twitter.com/agneymenon)
 
 ## Features
 
