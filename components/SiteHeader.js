@@ -13,7 +13,7 @@ function Header({ meta }) {
             ? `${meta.title} - ${blogConfig.title}`
             : blogConfig.title}
         </title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta
           name="description"
           content={meta?.description ?? blogConfig.description}
