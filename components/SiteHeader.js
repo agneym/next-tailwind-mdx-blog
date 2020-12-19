@@ -5,24 +5,24 @@ import Head from "next/head";
 import blogConfig from "blog.config";
 
 function Header({ meta }) {
+  const title = meta?.title
+    ? `${meta.title} - ${blogConfig.title}`
+    : blogConfig.title;
+  const description = meta?.description ?? blogConfig.description;
   return (
     <>
       <Head>
-        <title>
-          {meta?.title
-            ? `${meta.title} - ${blogConfig.title}`
-            : blogConfig.title}
-        </title>
+        <title>{title}</title>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta
-          name="description"
-          content={meta?.description ?? blogConfig.description}
-        />
+        <meta name="description" content={description} />
         <meta name="twitter:site" content={`${blogConfig.twitterUsername}`} />
         <link
           rel="me"
           href={`https://twitter.com/${blogConfig.twitterUsername}`}
         />
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
       </Head>
       <header className="pt-8 pb-8 flex items-center">
         <Link href="/">
