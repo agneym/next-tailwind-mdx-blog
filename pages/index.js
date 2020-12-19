@@ -13,7 +13,7 @@ export default function Home() {
         <title>Mindless Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="max-w-4xl m-auto">
+      <div className="max-w-3xl m-auto">
         <SiteHeader />
         <main>
           <MainHeader />
