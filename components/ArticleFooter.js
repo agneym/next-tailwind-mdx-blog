@@ -4,7 +4,7 @@ const getTwitterLink = () => {
   const mainLink = "https://twitter.com/intent/tweet";
   const params = new URLSearchParams();
   params.append("text", `Check out this article`);
-  params.append("url", typeof window === "undefined" ? "" : location.href);
+  params.append("url", "");
   params.append("via", blogConfig.twitterUsername);
   return `${mainLink}?${params.toString()}`;
 };
