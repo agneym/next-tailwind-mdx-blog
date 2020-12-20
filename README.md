@@ -6,6 +6,7 @@
 
 - MDX setup with listing and template page setup for the blog
 - Tailwind CSS setup and Tailwind Typography for article.
+- This starter uses [NextJS MDX Enhanced](https://github.com/hashicorp/next-mdx-enhanced), this means that you can import any components you want into the MDX files and it would _just work_ ™️.
 - Meta tags for the blog
 - Syntax Highlighting with Prism.
 - Share to Twitter and Buy me a Coffee button.
